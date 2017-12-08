@@ -15,8 +15,6 @@ class Loader(private var file: File) {
         val measurementNextLineRegex = Regex("^ {32}([G|R][0-9]{2})+")
         val grPosition = 32
         val startHeader = "END OF HEADER"
-        val DATETIME_POSITION_START = 1
-        val DATETIME_POSITION_END = 28
         val SEC_POSITION_START = 16
         val SEC_POSITION_END = 26
         val SEC = "0.0000000"
@@ -29,7 +27,6 @@ class Loader(private var file: File) {
         var element = 0
         var canReadLine = false
         var readLine = false
-        var dateTime = ""
         while (sc.hasNextLine()) {
             var line = sc.nextLine()
             if (line.contains(startHeader)) {
@@ -42,11 +39,10 @@ class Loader(private var file: File) {
                         readLine = (readMinutes && line.substring(SEC_POSITION_START, SEC_POSITION_END).trim() == SEC) || !readMinutes
                         element = 0
                         grPoints = getGrList(line)
-                        dateTime = line.substring(DATETIME_POSITION_START, DATETIME_POSITION_END).trim()
                     }
                     line.matches(measurementNextLineRegex) -> grPoints.addAll(getGrList(line))
                     readLine -> {
-                        lines.add(GeoObject(line, grPoints[element++], dateTime))
+                        lines.add(GeoObject(line, grPoints[element++]))
                     }
                 }
             }

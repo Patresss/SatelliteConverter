@@ -1,7 +1,7 @@
 package com.patres.converter.geo
 
 
-class GeoObject(var line: String, var type: String, var dateTime: String) {
+class GeoObject(private var line: String, var type: String) {
 
     companion object {
         val C1_POSITION_START = 2

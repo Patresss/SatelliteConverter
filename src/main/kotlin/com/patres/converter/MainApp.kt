@@ -1,7 +1,6 @@
 package com.patres.converter
 
 import com.jfoenix.controls.JFXDecorator
-import com.patres.converter.geo.Loader
 import com.patres.converter.gui.MainController
 import com.patres.converter.gui.dialog.ErrorDialog
 import javafx.application.Application
@@ -24,7 +23,7 @@ class MainApp : Application() {
         private val LOGGER = LoggerFactory.getLogger(MainApp::class.java)
         lateinit var mainStage: Stage
         lateinit var mainController: MainController
-        var bundle = ResourceBundle.getBundle("language/Bundle", Locale("pl"))
+        var bundle = ResourceBundle.getBundle("language/Bundle", Locale("pl"))!!
 
         @JvmStatic
         fun main(args: Array<String>) {

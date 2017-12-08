@@ -66,7 +66,7 @@ class MainController {
         if (file != null) {
             val loader = Loader(File(filePathField.text))
             val loadLines = loader.getLoadLines(chooseMinute.isSelected)
-            val ex = ExcelCreator(loadLines)
+            val ex = ExcelCreator(loadLines, !chooseMinute.isSelected)
             ex.createExcel(file)
             HandlerDialog("Plik przkonwertowany").show()
         }

@@ -1,7 +1,12 @@
 package com.patres.converter.geo
 
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-class GeoObject(private var line: String, var type: String) {
+
+
+
+class GeoObject(private var line: String, var type: String, var dateTimeString: String) {
 
     companion object {
         val C1_POSITION_START = 2
@@ -21,6 +26,7 @@ class GeoObject(private var line: String, var type: String) {
     var l1: String = "00000000.0000"
     var l2: String = "00000000.0000"
     var p2: String = "00000000.0000"
+    var dateTime: LocalDateTime
 
     init {
         c1 = getTextFromLine(C1_POSITION_START, C1_POSITION_END)
@@ -28,6 +34,9 @@ class GeoObject(private var line: String, var type: String) {
         l1 = getTextFromLine(L1_POSITION_START, L1_POSITION_END)
         l2 = getTextFromLine(L2_POSITION_START, L2_POSITION_END)
         p2 = getTextFromLine(P2_POSITION_START, P2_POSITION_END)
+
+        val formatter = DateTimeFormatter.ofPattern("yy MM dd HH mm ss")
+        dateTime = LocalDateTime.parse(dateTimeString.split(".")[0].replace("  ", " 0"), formatter)
     }
 
     private fun getTextFromLine(startPosition: Int, endPosition: Int): String {
@@ -39,8 +48,5 @@ class GeoObject(private var line: String, var type: String) {
         }
         return "00000000.0000"
     }
-
-    override fun toString() = "$c1\t$c2\t$l1\t$l2\t$p2"
-
 
 }

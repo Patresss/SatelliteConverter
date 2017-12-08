@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.patres.converter.gui.MainController">
+   <BorderPane>
+      <center>
+         <StackPane fx:id="root" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+               <Insets />
+            </BorderPane.margin>
+            <children>
+               <VBox styleClass="main-pane">
+                  <children>
+                     <GridPane hgap="10.0" styleClass="main-pane">
+                       <columnConstraints>
+                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                       </columnConstraints>
+                       <rowConstraints>
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                       </rowConstraints>
+                        <children>
+                           <Label text="%choose.file" />
+                           <JFXTextField fx:id="filePathField" GridPane.columnIndex="1" />
+                           <JFXButton onAction="#browseFile" text="%button.browse" GridPane.columnIndex="2" />
+                        </children>
+                        <padding>
+                           <Insets left="10.0" />
+                        </padding>
+                        <VBox.margin>
+                           <Insets left="10.0" top="20.0" />
+                        </VBox.margin>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                     </GridPane>
+                     <HBox>
+                        <VBox.margin>
+                           <Insets left="20.0" top="20.0" />
+                        </VBox.margin>
+                        <children>
+                           <JFXCheckBox fx:id="chooseMinute" checkedColor="#0095ff" text="%choose.minute" />
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </StackPane>
+      </center>
+      <bottom>
+         <JFXButton fx:id="convertButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#convert" text="%button.convert" BorderPane.alignment="CENTER" />
+      </bottom>
+      <top>
+         <Pane prefHeight="40.0" styleClass="title-pane" BorderPane.alignment="CENTER">
+            <children>
+               <Label alignment="CENTER" layoutY="3.0" text="%application.name">
+                  <padding>
+                     <Insets left="10.0" />
+                  </padding>
+               </Label>
+            </children>
+         </Pane>
+      </top>
+   </BorderPane>
+
+</StackPane>

@@ -1,0 +1,235 @@
+.root {
+    -fx-font-family: "Roboto";
+
+    -color-primary: #03A9F4;
+    -color-primary-dark: #0288D1;
+    -color-primary-ligth: #B3E5FC;
+
+    -color-primary-text: #01547a;
+
+    -color-background: #FFFFFF;
+    -color-accent: #FFC107;
+    -color-accent-ligth: #ffecb4;
+
+}
+
+/* ================================================================================*\
+ * SQL Table View
+\* ================================================================================*/
+.table-view {
+    -fx-control-inner-background: -color-background;
+    -fx-background-color: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 0 50 50;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -color-background;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent derive(-fx-base, 80%) transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 11pt;
+    -fx-alignment: center-left;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+/* ================================================================================*\
+ * SQL Query
+\* ================================================================================*/
+.side-menu {
+    -fx-padding: 20.0, 10.0;
+    -fx-font-size: 15.0;
+    -fx-font-weight: NORMAL;
+}
+
+/* ================================================================================*\
+ * Label
+\* ================================================================================*/
+.label {
+    -fx-text-fill: -color-primary-text;
+}
+
+.text {
+    -fx-text-fill: -color-primary-text;
+}
+
+.label-title {
+    -fx-font-size: 20.0px;
+    -fx-padding: 14.0px;
+    -fx-font-weight: bold;
+}
+
+
+/* ================================================================================*\
+ * Text Field
+\* ================================================================================*/
+.text-field {
+    -fx-background-color: -color-background;
+}
+
+/* ================================================================================*\
+ * Button
+\* ================================================================================*/
+.button {
+    -fx-background-radius: 0.0;
+    -fx-background-color: -color-accent;
+    -fx-font-size: 11.0pt;
+    -fx-text-fill: -color-background;
+    -fx-cursor: hand;
+}
+
+/* ================================================================================*\
+ * Tool Bar
+\* ================================================================================*/
+.jfx-tool-bar {
+    -fx-font-size: 20.0;
+    -fx-font-weight: BOLD;
+    -fx-background-color: -color-primary;
+    -fx-pref-width: 100.0%;
+    -fx-pref-height: 64.0px;
+}
+
+.jfx-tool-bar HBox {
+    -fx-alignment: center;
+    -fx-spacing: 25.0;
+    -fx-padding: 0.0 10.0;
+}
+
+.jfx-tool-bar Label {
+    -fx-text-fill: -color-background;
+}
+
+.jfx-tool-bar .jfx-options-burger {
+    -fx-padding: 22px;
+}
+
+.jfx-tool-bar .jfx-options-burger StackPane {
+    -fx-pref-width: 4px;
+}
+
+.jfx-tool-bar .jfx-rippler {
+    -fx-rippler-fill: -color-background;
+}
+
+
+
+/* ================================================================================*\
+ * JFX Decorator
+\* ================================================================================*/
+.jfx-decorator {
+    -fx-decorator-color: -color-primary;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container .button {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .resize-border {
+    -fx-border-color: -fx-decorator-color;
+    -fx-border-width: 0 4 4 4;
+}
+
+/*******************************************************************************
+ * Combo Box                                                                   *
+ ******************************************************************************/
+.combo-box-popup .list-view {
+    -fx-background-insets: 0.0;
+    -fx-cell-horizontal-margin: 0.0;
+    -fx-cell-vertical-margin: 0.0;
+    -fx-vertical-gap: 0.0;
+    -fx-expanded: false;
+}
+
+
+.combo-box .label,
+.combo-box .list-cell {
+    -fx-text-fill: -color-primary-text;
+    -fx-cursor: hand;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected,
+.combo-box-popup .list-view .list-cell:filled:selected:hover,
+.combo-box-popup .list-view .list-cell:filled:hover,
+.combo-box-popup .list-view .list-cell:odd:selected .list-cell-container,
+.combo-box-popup .list-view .list-cell:even:selected .list-cell-container {
+    -fx-background-color: -color-primary-ligth;
+    -fx-cursor: hand;
+}
+
+.combo-box:selected,
+.combo-box-base:hover > .arrow-button > .arrow,
+.combo-box:focused > .arrow-button > .arrow {
+    -fx-background-color: -color-primary-dark;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.list-cell-content-container {
+    -fx-alignment: center-left;
+}
+
+.-combo-box:focused {
+    -fx-background-color: -color-background;
+}
+
+.combo-box,
+.combo-box:hover,
+.combo-box:showing {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.combo-box {
+
+}
+
+
+.main-pane  {
+    -fx-background-color: -color-background;
+}
+
+.title-pane {
+    -fx-background-color: -color-primary;
+}
+.title-pane .pane{
+    -fx-min-height: 100px;
+}
+
+.title-pane .label {
+    -fx-text-fill: -color-background;
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
+}
+
+.v-box {
+    -fx-background-color: -color-background;
+}
+
+.check-box .box {
+    -fx-border-color: -color-primary-dark;
+}
+
+.check-box {
+    -fx-text-fill: -color-primary-text;
+    -jfx-checked-color: -color-primary;
+}
+
+
